@@ -67,6 +67,10 @@ flutter:
     - images/mountain.jpg
     - images/sea.jpg
     - images/water-hill.jpg
+    - images/kayaking.png
+    - images/balloning.png
+    - images/snorkeling.png
+    - images/hiking.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello/misc/color.dart';
 import 'package:hello/widgets/app_large_text.dart';
+import 'package:hello/widgets/app_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,6 +11,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  var images = {
+    "kayaking.png": "Kayaking",
+    "water-hill.jpg": "Water Hill",
+    "hiking.png": "Hiking",
+    "snorkeling.png": "Snorkling",
+    "balloning.png": "Balloning"
+  };
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
@@ -62,27 +70,86 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
           ),
           Container(
+            padding: const EdgeInsets.only(left: 20),
             height: 300,
             width: double.maxFinite,
             child: TabBarView(
               controller: _tabController,
               children: [
-                Container(
-                  width: 200,
-                  height: 300,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    image: DecorationImage(
-                      image: AssetImage("images/mountain.jpg"),
-                    ),
-                  ),
+                ListView.builder(
+                  itemCount: 3,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      margin: const EdgeInsets.only(right: 15, top: 10),
+                      width: 200,
+                      height: 300,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        image: DecorationImage(
+                          image: AssetImage("images/mountain.jpg"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  },
                 ),
                 Text("Hi"),
                 Text("Hi"),
               ],
             ),
           ),
+          SizedBox(height: 30),
+          Container(
+            margin: const EdgeInsets.only(left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppLargeText(text: "Explore more", size: 22),
+                AppText(text: "See all", color: AppColor.textColor1)
+              ],
+            ),
+          ),
+          SizedBox(height: 10),
+          Container(
+            height: 120,
+            width: double.maxFinite,
+            margin: const EdgeInsets.only(left: 20),
+            child: ListView.builder(
+                itemCount: images.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_, index) {
+                  return Container(
+                    margin: const EdgeInsets.only(right: 30),
+                    child: Column(
+                      children: [
+                        Container(
+                          // margin: const EdgeInsets.only(right: 50),
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.white,
+                            image: DecorationImage(
+                              image: AssetImage(
+                                  "images/" + images.keys.elementAt(index)),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        Container(
+                          child: AppText(
+                            text: images.values.elementAt(index),
+                            color: AppColor.textColor2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+          )
         ],
       ),
     );

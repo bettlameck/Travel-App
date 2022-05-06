@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello/pages/navpages/bar_item_page.dart';
-import 'package:hello/pages/navpages/home_page.dart';
+import 'package:hello/pages/home_page.dart';
 import 'package:hello/pages/navpages/my_page.dart';
 import 'package:hello/pages/navpages/search_page.dart';
 
