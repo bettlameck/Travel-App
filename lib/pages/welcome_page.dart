@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hello/widgets/app_large_text.dart';
 import 'package:hello/widgets/app_text.dart';
+import 'package:hello/widgets/responsive_button.dart';
+
+import '../misc/color.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -33,6 +36,7 @@ class _WelcomePageState extends State<WelcomePage> {
               child: Container(
                 margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,13 +46,38 @@ class _WelcomePageState extends State<WelcomePage> {
                           text: "Mountain",
                           size: 30,
                         ),
+                        SizedBox(
+                          height: 20,
+                        ),
                         Container(
                           width: 250,
                           child: AppText(
-                            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard"),
-                            color: AppColor.textColor2,    
+                            text:
+                                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+                            color: AppColor.textColor2,
+                            size: 14,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        ResponsiveButton(
+                          width: 120,
                         )
                       ],
+                    ),
+                    Column(
+                      children: List.generate(4, (indexDots) {
+                        return Container(
+                          margin: const EdgeInsets.only(bottom: 2),
+                          width: 8,
+                          height: index==indexDots?25:8,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color:index==indexDots?AppColor.mainColor:AppColor.mainColor.withOpacity(0.3)
+                          ),
+                        );
+                      }),
                     )
                   ],
                 ),
