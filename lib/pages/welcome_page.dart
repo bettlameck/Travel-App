@@ -54,7 +54,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           child: AppText(
                             text:
                                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-                            color: AppColor.textColor2,
+                            color: AppColors.textColor2,
                             size: 14,
                           ),
                         ),
@@ -71,11 +71,12 @@ class _WelcomePageState extends State<WelcomePage> {
                         return Container(
                           margin: const EdgeInsets.only(bottom: 2),
                           width: 8,
-                          height: index==indexDots?25:8,
+                          height: index == indexDots ? 25 : 8,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
-                              color:index==indexDots?AppColor.mainColor:AppColor.mainColor.withOpacity(0.3)
-                          ),
+                              color: index == indexDots
+                                  ? AppColors.mainColor
+                                  : AppColors.mainColor.withOpacity(0.3)),
                         );
                       }),
                     )

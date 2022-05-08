@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 isScrollable: true,
                 indicatorSize: TabBarIndicatorSize.label,
                 indicator:
-                    CircularTabIndicator(color: AppColor.mainColor, radius: 4),
+                    CircularTabIndicator(color: AppColors.mainColor, radius: 4),
                 tabs: [
                   Tab(text: "Places"),
                   Tab(text: "Inspiration"),
@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AppLargeText(text: "Explore more", size: 22),
-                AppText(text: "See all", color: AppColor.textColor1)
+                AppText(text: "See all", color: AppColors.textColor1)
               ],
             ),
           ),
@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         Container(
                           child: AppText(
                             text: images.values.elementAt(index),
-                            color: AppColor.textColor2,
+                            color: AppColors.textColor2,
                           ),
                         ),
                       ],
