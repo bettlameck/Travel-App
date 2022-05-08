@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hello/widgets/app_text.dart';
+import 'package:travel_app/widgets/app_text.dart';
 import '../misc/color.dart';
 
 class AppButtons extends StatelessWidget {
@@ -37,7 +37,7 @@ class AppButtons extends StatelessWidget {
           ? Center(
               child: AppText(
                 text: text!,
-                color: color  ,
+                color: color,
               ),
             )
           : Center(child: Icon(icon, color: color)),

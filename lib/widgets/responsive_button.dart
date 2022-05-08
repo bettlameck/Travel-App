@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:hello/misc/color.dart';
-import 'package:hello/widgets/app_text.dart';
+import 'package:travel_app/misc/color.dart';
+import 'package:travel_app/widgets/app_text.dart';
 
 class ResponsiveButton extends StatelessWidget {
   bool? isResponsive;
